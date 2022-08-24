@@ -6,13 +6,13 @@ import styles from './style.module.css'
 
 export default function MainPage() {
   return (
-    <div className="">
+    <>
       <DiaryContainer />
       <DateContainer />
       <TodoContainer />
       <footer className={styles.footer}>
-      Copyright &copy; by sangheon All right reserved. 2022.
+        Copyright &copy; Sangheon 2022. All right reserved.
       </footer>
-    </div>
+    </>
   )
 }
