@@ -1,13 +1,11 @@
 import React from 'react'
 import styles from './style.module.css'
+import { formatDate, formatDayOfWeek } from '../utils/date';
 
 export default function DateContainer() {
-  const date = new Date();
-  const weekDay = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-
   return (
     <div className={styles.dates}>
-      <p className={styles.today}> {date.toLocaleDateString('ko-kr')} {weekDay[date.getDay()]}</p>
+      <p className={styles.today}> {formatDate(new Date)} ({formatDayOfWeek(new Date)})</p>
     </div>
   )
 }
