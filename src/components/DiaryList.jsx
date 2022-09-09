@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import NewDiaryLayer from './NewDiaryLayer';
 
 export default function DiaryList({ styles }) {
-  const [showPopup, setShowPopup] = useState(false)
+  const [showPopup, setShowPopup] = useState(false);
 
   const onModalClick = (e) => {
     const isBackGroundArea = e.target.closest('div').className.indexOf('layer') > -1;
-    isBackGroundArea && setShowPopup(!showPopup)
-  }
+    isBackGroundArea && setShowPopup(!showPopup);
+  };
 
   return (
     <div className={styles.wrap}>
@@ -19,11 +19,13 @@ export default function DiaryList({ styles }) {
             <strong className={styles.date}>29일</strong>
           </li>
           <li className={styles.diary}>
-            <button className={styles.new_diary} onClick={() => setShowPopup(!showPopup)}>+</button>
+            <button className={styles.new_diary} onClick={() => setShowPopup(!showPopup)}>
+              +
+            </button>
           </li>
         </ul>
       </div>
       {showPopup && <NewDiaryLayer styles={styles} onModalClick={onModalClick} />}
     </div>
-  )
+  );
 }

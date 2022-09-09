@@ -1,7 +1,7 @@
-import React from 'react'
-import TodoList from '../components/TodoList'
-import TodoForm from '../components/TodoForm'
-import styles from './style.module.css'
+import React from 'react';
+import TodoList from '../components/TodoList';
+import TodoForm from '../components/TodoForm';
+import styles from './style.module.css';
 
 export default function TodoContainer() {
   return (
@@ -9,5 +9,5 @@ export default function TodoContainer() {
       <TodoList styles={styles} />
       <TodoForm styles={styles} />
     </div>
-  )
+  );
 }

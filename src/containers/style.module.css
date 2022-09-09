@@ -1,5 +1,5 @@
 /* DiaryContainer */
-.diarys{
+.diarys {
   overflow: hidden;
   overflow-y: auto;
   width: calc(100% - 320px);
@@ -20,26 +20,25 @@
 .diarys::-webkit-scrollbar-track {
   background-color: #f7f7f7;
   border-radius: 9px;
-  box-shadow: inset 0px 0px 5px rgba(255,255,255,0.5);
-  
+  box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.5);
 }
 
-.diarys .wrap + .wrap{
+.diarys .wrap + .wrap {
   margin-top: 40px;
 }
-.diarys .title{
+.diarys .title {
   color: #444;
   font-size: 32px;
 }
 
 /* DiaryList */
-.diarys .box{
+.diarys .box {
   margin-top: 20px;
 }
-.diarys .list{
+.diarys .list {
   display: flex;
 }
-.diarys .diary{
+.diarys .diary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,10 +51,10 @@
 .diarys .diary + .diary {
   margin-left: 20px;
 }
-.diarys .diary:last-of-type{
+.diarys .diary:last-of-type {
   border: none;
 }
-.diarys .new_diary{
+.diarys .new_diary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,23 +65,23 @@
   border: 1px dashed #ddd;
   border-radius: 12px;
 }
-.diarys .new_diary:hover{
+.diarys .new_diary:hover {
   color: #666;
   border-radius: 12px;
   border: 1px dashed #999;
 }
-.diarys .month{
+.diarys .month {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
   color: #999;
 }
-.diarys .date{
+.diarys .date {
   font-size: 24px;
   color: #333;
 }
 /* NewDiaryPopup */
-.diarys .layer{
+.diarys .layer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,17 +90,17 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
-.diarys .layer .inner{
+.diarys .layer .inner {
   width: 320px;
   height: 560px;
   padding: 32px;
   border-radius: 20px;
   background-color: #fff;
 }
-.diarys .layer_title{
+.diarys .layer_title {
   display: block;
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 2px;
@@ -109,15 +108,15 @@
   font-size: 32px;
   line-height: 1.2;
 }
-.form{
+.form {
   padding: 20px 0;
 }
-.form label{
+.form label {
   display: block;
   margin-bottom: 7px;
   font-size: 14px;
 }
-.form .item_tf input{ 
+.form .item_tf input {
   width: 100%;
   height: 48px;
   padding: 8px 16px;
@@ -127,30 +126,30 @@
   outline: none;
   box-sizing: border-box;
 }
-.form .emotions{
+.form .emotions {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 4px;
 }
-.form .emotionlist{
+.form .emotionlist {
   display: flex;
 }
-.form .emotionlist li{
+.form .emotionlist li {
   position: relative;
   width: 20%;
 }
-.form .emotionlist input[type=radio]{
+.form .emotionlist input[type='radio'] {
   position: absolute;
   width: 1px;
   height: 1px;
   margin-left: -1px;
   opacity: 0.01;
 }
-.form .emotionlist input[type=radio]:checked + label {
-  border: 2px solid #FFE251;
-  background-color: #FFFDF1;
+.form .emotionlist input[type='radio']:checked + label {
+  border: 2px solid #ffe251;
+  background-color: #fffdf1;
 }
-.form .emotionlist label{
+.form .emotionlist label {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,12 +160,12 @@
   cursor: pointer;
   box-sizing: border-box;
 }
-.form .emotionlist svg{
+.form .emotionlist svg {
   margin-bottom: 4px;
   font-size: 30px;
 }
 
-.form .textarea{
+.form .textarea {
   width: 100%;
   padding: 12px;
   font-size: 14px;
@@ -176,19 +175,19 @@
   outline: none;
   resize: none;
 }
-.form .textarea:focus{
+.form .textarea:focus {
   border: 1px solid #9a9a9a;
 }
-.form .submit{
+.form .submit {
   width: 100%;
   height: 48px;
   line-height: 48px;
   font-weight: 600;
   font-size: 14px;
   border-radius: 4px;
-  background-color: #FFD400;
+  background-color: #ffd400;
 }
-.form .taglist{
+.form .taglist {
   display: flex;
   overflow: hidden;
   overflow-x: auto;
@@ -199,10 +198,10 @@
   box-sizing: border-box;
   /* background-color: #099; */
 }
-.form .taglist::-webkit-scrollbar{
+.form .taglist::-webkit-scrollbar {
   display: none;
 }
-.form input[type=text]{
+.form input[type='text'] {
   width: 72px;
   height: 30px;
   margin-right: 6px;
@@ -213,7 +212,7 @@
   outline: none;
   box-sizing: border-box;
 }
-.form .taglist span{
+.form .taglist span {
   display: inline-block;
   height: 30px;
   padding: 0 12px;
@@ -221,16 +220,16 @@
   font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 24px;
-  text-align: center; 
+  text-align: center;
   background-color: #fff;
   box-sizing: border-box;
   white-space: nowrap;
 }
 .form .taglist span + span,
-.form .taglist span + input[type=text]{
+.form .taglist span + input[type='text'] {
   margin-left: 6px;
 }
-.form .taglist button{
+.form .taglist button {
   display: inline-block;
   height: 30px;
   margin-left: 6px;
@@ -239,14 +238,14 @@
   font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 24px;
-  text-align: center; 
+  text-align: center;
   background-color: #fff;
   box-sizing: border-box;
   white-space: nowrap;
 }
 
 /* DiaryPreview */
-.diarys .preview{
+.diarys .preview {
   margin-top: 20px;
   width: 100%;
   height: 500px;
@@ -255,9 +254,8 @@
   background-color: #fff;
 }
 
-
 /* DateContainer */
-.dates{
+.dates {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,9 +266,9 @@
   height: 30px;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  background-color: #7EA4E8;
+  background-color: #7ea4e8;
 }
-.dates .today{
+.dates .today {
   padding-top: 1px;
   font-weight: bold;
   font-size: 15px;
@@ -278,9 +276,8 @@
   color: #fff;
 }
 
-
 /* TodoContainer */
-.todos{
+.todos {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -293,39 +290,38 @@
   border-left: 1px solid #eee;
 }
 
-
 /* TodoList */
-.todos .wrap{
+.todos .wrap {
   width: 100%;
   height: calc(100% - 50px);
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-.todos .box + .box{
+.todos .box + .box {
   margin-top: 40px;
 }
 
-.todos .log{
+.todos .log {
   font-size: 12px;
   color: #666;
   text-align: center;
 }
-.todos .list{
+.todos .list {
   padding: 10px 30px 0;
 }
-.todos .todo{
+.todos .todo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 15px;
 }
-.todos .todo + .todo{
+.todos .todo + .todo {
   margin-top: 5px;
 }
-.todos .text{
+.todos .text {
   display: inline-block;
 }
-.todos .todo button{
+.todos .todo button {
   margin: 0;
   width: 15px;
   height: 15px;
@@ -333,27 +329,27 @@
   border: 1px solid #333;
   text-indent: -9999px;
 }
-.todos .todo button + button{
+.todos .todo button + button {
   margin-left: 4px;
 }
-.todos .todo input{
+.todos .todo input {
   width: 16px;
   height: 16px;
   margin-top: 2px;
   margin-right: 8px;
   vertical-align: top;
 }
-.todos .todo input:checked + span{
+.todos .todo input:checked + span {
   color: #999;
   text-decoration: line-through;
 }
 
 /* TodoForm */
-.todos .item_tf{
+.todos .item_tf {
   width: 100%;
   height: 50px;
 }
-.todos .input{
+.todos .input {
   width: 100%;
   padding: 15px 30px 0;
   color: #555;
@@ -362,6 +358,6 @@
   outline: none;
   caret-color: #bbb;
 }
-.todos .input::placeholder{
+.todos .input::placeholder {
   color: #bbb;
 }

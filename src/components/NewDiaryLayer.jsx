@@ -1,5 +1,11 @@
-import React from 'react'
-import { RiEmotionLaughLine, RiEmotionLine, RiEmotionNormalLine, RiEmotionSadLine, RiEmotionUnhappyLine } from 'react-icons/ri'
+import React from 'react';
+import {
+  RiEmotionLaughLine,
+  RiEmotionLine,
+  RiEmotionNormalLine,
+  RiEmotionSadLine,
+  RiEmotionUnhappyLine,
+} from 'react-icons/ri';
 
 export default function NewDiaryLayer({ styles, onModalClick }) {
   return (
@@ -13,23 +19,38 @@ export default function NewDiaryLayer({ styles, onModalClick }) {
               <ul className={styles.emotionlist}>
                 <li>
                   <input type="radio" name="emotion" id="emotion1" />
-                  <label htmlFor="emotion1"><RiEmotionLaughLine />기쁨</label>
+                  <label htmlFor="emotion1">
+                    <RiEmotionLaughLine />
+                    기쁨
+                  </label>
                 </li>
                 <li>
                   <input type="radio" name="emotion" id="emotion2" />
-                  <label htmlFor="emotion2"><RiEmotionLine />좋음</label>
+                  <label htmlFor="emotion2">
+                    <RiEmotionLine />
+                    좋음
+                  </label>
                 </li>
                 <li>
                   <input type="radio" name="emotion" id="emotion3" />
-                  <label htmlFor="emotion3"><RiEmotionNormalLine />보통</label>
+                  <label htmlFor="emotion3">
+                    <RiEmotionNormalLine />
+                    보통
+                  </label>
                 </li>
                 <li>
                   <input type="radio" name="emotion" id="emotion4" />
-                  <label htmlFor="emotion4"><RiEmotionSadLine />슬픔</label>
+                  <label htmlFor="emotion4">
+                    <RiEmotionSadLine />
+                    슬픔
+                  </label>
                 </li>
                 <li>
                   <input type="radio" name="emotion" id="emotion5" />
-                  <label htmlFor="emotion5"><RiEmotionUnhappyLine />화남</label>
+                  <label htmlFor="emotion5">
+                    <RiEmotionUnhappyLine />
+                    화남
+                  </label>
                 </li>
               </ul>
             </div>
@@ -45,10 +66,12 @@ export default function NewDiaryLayer({ styles, onModalClick }) {
               <span>#오늘의일기</span>
               <button>+ Add</button>
             </div>
-            <button type="submit" className={styles.submit}>작성하기</button>
+            <button type="submit" className={styles.submit}>
+              작성하기
+            </button>
           </fieldset>
         </form>
       </div>
     </div>
-  )
+  );
 }

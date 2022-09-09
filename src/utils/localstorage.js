@@ -1,26 +1,22 @@
 const storage = localStorage;
 
 export const getItem = (key, defaultValue) => {
-  try{
+  try {
     const value = storage.getItem(key);
     return value ? JSON.parse(value) : defaultValue;
-  }catch{
+  } catch {
     return defaultValue;
   }
-}
+};
 
 export const setItem = (key, value) => {
-  try{
-    storage.setItem(key, JSON.stringify(value))
-  }catch{
-
-  }
-}
+  try {
+    storage.setItem(key, JSON.stringify(value));
+  } catch {}
+};
 
 export const removeItem = (key) => {
-  try{
-    storage.removeItem(key)
-  }catch{
-
-  }
-}
+  try {
+    storage.removeItem(key);
+  } catch {}
+};
