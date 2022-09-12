@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../store/reducers/todoReducer';
+import { formatDate } from '../utils/date';
+import Input from './Input';
 
-export default function TodoInput({ styles }) {
+export default function TodoInput() {
   const [value, setValue] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const dispatch = useDispatch();
 
-  const onHandleChange = (e) => {
-    setValue(e.target.value);
-  };
-  const onChangeFocus = () => {
-    setIsFocused(!isFocused);
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addTodo({ date: formatDate(new Date()), contents: value }));
+    setValue('');
   };
 
   return (
-    <div className={styles.item_tf}>
-      <input
-        type="input"
-        value={value}
-        onChange={onHandleChange}
-        onFocus={onChangeFocus}
-        onBlur={onChangeFocus}
-        placeholder={isFocused ? '' : 'Add Todo'}
-        className={styles.input}
-      />
-    </div>
+    <form action="#" style={{ width: '100%' }} onSubmit={onHandleSubmit}>
+      <fieldset style={{ display: 'flex', padding: '15px 20px 13px', boxSizing: 'border-box' }}>
+        <Input value={value} setValue={setValue} />
+        <button type="submit">button!</button>
+      </fieldset>
+    </form>
   );
 }

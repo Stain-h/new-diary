@@ -1,20 +1,27 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
-import counterSlice from './slice/counterSlice';
+import todoReducer from './reducers/todoReducer';
+import { getItem, setItem } from '../utils/localstorage';
 
 const logger = createLogger();
 
 const rootReducer = combineReducers({
-  counter: counterSlice,
+  todos: todoReducer,
 });
 
-const initialState = {};
+const initialState = {
+  todos: getItem('todo_list', []),
+};
 
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',
   preloadedState: initialState,
+});
+
+store.subscribe(() => {
+  setItem('todo_list', store.getState().todos);
 });
 
 export default store;

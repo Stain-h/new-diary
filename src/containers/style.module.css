@@ -318,6 +318,9 @@
 .todos .todo + .todo {
   margin-top: 5px;
 }
+.todos .box_inp {
+  display: flex;
+}
 .todos .text {
   display: inline-block;
 }
@@ -333,6 +336,7 @@
   margin-left: 4px;
 }
 .todos .todo input {
+  flex-basis: 19px;
   width: 16px;
   height: 16px;
   margin-top: 2px;
