@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addDiary } from '../store/reducers/diaryReducer';
+import { todayDateWithTime } from '../utils/date';
 import {
   RiEmotionLaughLine,
   RiEmotionLine,
@@ -6,65 +9,100 @@ import {
   RiEmotionSadLine,
   RiEmotionUnhappyLine,
 } from 'react-icons/ri';
+import { GrFormClose } from 'react-icons/gr';
 
-export default function NewDiaryLayer({ styles, onModalClick }) {
+export default function NewDiaryLayer({ styles, setShowPopup }) {
+  const dispatch = useDispatch();
+  const [emotion, setEmotion] = useState('');
+  const [textValue, setTextValue] = useState('');
+  const [content, setContent] = useState('');
+  const [tagList, setTagList] = useState([]);
+
+  const onHandleChange = (e) => {
+    const target = e.target;
+    if (target.type === 'text') {
+      setTextValue(target.value);
+    } else if (target.type === 'radio') {
+      setEmotion(target.value);
+    }
+  };
+
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addDiary({ emotion, content, tagList, createDate: todayDateWithTime }));
+    setShowPopup(false);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.target.value !== '' && setTagList([...tagList, textValue]);
+      setTextValue('');
+    }
+  };
+
+  const onModalClick = (e) => {
+    const isBackGroundArea = e.target.closest('div').className.indexOf('layer') > -1;
+    isBackGroundArea && setShowPopup(false);
+  };
+
   return (
     <div className={styles.layer} onClick={onModalClick}>
-      <div div className={styles.inner}>
+      <div className={styles.inner}>
         <strong className={styles.layer_title}>New Diary</strong>
-        <form action="#" className={styles.form}>
+        <form action="#" className={styles.form} onSubmit={onHandleSubmit}>
           <fieldset>
             <div className={styles.emotions}>
               <label htmlFor="">오늘의 기분</label>
               <ul className={styles.emotionlist}>
-                <li>
-                  <input type="radio" name="emotion" id="emotion1" />
-                  <label htmlFor="emotion1">
-                    <RiEmotionLaughLine />
-                    기쁨
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="emotion" id="emotion2" />
-                  <label htmlFor="emotion2">
-                    <RiEmotionLine />
-                    좋음
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="emotion" id="emotion3" />
-                  <label htmlFor="emotion3">
-                    <RiEmotionNormalLine />
-                    보통
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="emotion" id="emotion4" />
-                  <label htmlFor="emotion4">
-                    <RiEmotionSadLine />
-                    슬픔
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="emotion" id="emotion5" />
-                  <label htmlFor="emotion5">
-                    <RiEmotionUnhappyLine />
-                    화남
-                  </label>
-                </li>
+                {emotionList.map((item) => (
+                  <li key={item.id}>
+                    <input
+                      type="radio"
+                      id={`radio${item.id}`}
+                      value={item.name}
+                      checked={emotion === item.name}
+                      onChange={onHandleChange}
+                    />
+                    <label htmlFor={`radio${item.id}`} style={{ color: item.color }}>
+                      {item.icon}
+                      {item.name}
+                    </label>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
               <label htmlFor="textArea">일기쓰기</label>
-              <textarea name="" id="textArea" cols="30" rows="10" resize="none" className={styles.textarea}></textarea>
+              <textarea
+                name=""
+                id="textArea"
+                cols="30"
+                rows="10"
+                resize="none"
+                className={styles.textarea}
+                placeholder="일기를 입력하세요."
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              ></textarea>
             </div>
             <div className={styles.taglist}>
-              <span>#오늘의일기</span>
-              <input type="text" />
-              <span>#오늘의일기</span>
-              <span>#오늘의일기</span>
-              <span>#오늘의일기</span>
-              <button>+ Add</button>
+              {tagList.length > 0 &&
+                tagList.map((tag, idx) => (
+                  <span key={idx}>
+                    {tag}{' '}
+                    <button type="button" onClick={() => {}}>
+                      <GrFormClose />
+                    </button>
+                  </span>
+                ))}
+              <input
+                type="text"
+                placeholder="add tag"
+                value={textValue}
+                onChange={onHandleChange}
+                onKeyPress={handleKeyPress}
+              />
             </div>
             <button type="submit" className={styles.submit}>
               작성하기
@@ -75,3 +113,11 @@ export default function NewDiaryLayer({ styles, onModalClick }) {
     </div>
   );
 }
+
+const emotionList = [
+  { id: 0, icon: <RiEmotionLaughLine color="#036635" />, name: '기쁨', color: '#036635' },
+  { id: 1, icon: <RiEmotionLine color="blue" />, name: '좋음', color: 'blue' },
+  { id: 2, icon: <RiEmotionNormalLine color="#f0f0ff" />, name: '보통', color: 'f0f0ff' },
+  { id: 3, icon: <RiEmotionSadLine color="orange" />, name: '슬픔', color: 'orange' },
+  { id: 4, icon: <RiEmotionUnhappyLine color="red" />, name: '화남', color: 'red' },
+];

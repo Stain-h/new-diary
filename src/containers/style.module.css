@@ -229,7 +229,7 @@
 .form .taglist span + input[type='text'] {
   margin-left: 6px;
 }
-.form .taglist button {
+/* .form .taglist button {
   display: inline-block;
   height: 30px;
   margin-left: 6px;
@@ -242,7 +242,7 @@
   background-color: #fff;
   box-sizing: border-box;
   white-space: nowrap;
-}
+} */
 
 /* DiaryPreview */
 .diarys .preview {
@@ -308,6 +308,45 @@
 }
 .todos .list {
   padding: 10px 30px 0;
+}
+.todos .todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.todos .todo + .todo {
+  margin-top: 5px;
+}
+.todos .box_inp {
+  display: flex;
+}
+.todos .text {
+  display: inline-block;
+  width: 190px;
+}
+.todos .todo button {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  text-indent: -9999px;
+}
+.todos .todo button + button {
+  margin-left: 4px;
+}
+.todos .todo input {
+  flex-basis: 19px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+.todos .todo input:checked + span {
+  color: #999;
+  text-decoration: line-through;
 }
 
 /* TodoForm */

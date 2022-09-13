@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import TodoItem from './TodoItem';
+import Todo from './Todo';
 
 export default function TodoList({ styles }) {
   const todos = useSelector((state) => state.todos);
-
   return (
     <div className={styles.wrap}>
       {todos.length > 0 &&
@@ -17,7 +16,7 @@ export default function TodoList({ styles }) {
                 <p className={styles.log}>{convertedDate}</p>
                 <ul className={styles.list}>
                   {todoList.map((todo) => (
-                    <TodoItem date={date} todo={todo} />
+                    <Todo key={todo.id} date={date} todo={todo} />
                   ))}
                 </ul>
               </div>

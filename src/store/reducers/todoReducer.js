@@ -1,9 +1,9 @@
 import { createAction, createReducer, nanoid } from '@reduxjs/toolkit';
-import { formatDate } from '../../utils/date';
+import { todayDateStr } from '../../utils/date';
 
 const initialState = [
   {
-    date: formatDate(new Date()),
+    date: todayDateStr,
     todoList: [{ id: '', contents: '', done: false }],
   },
 ];

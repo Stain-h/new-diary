@@ -1,21 +1,21 @@
-export function formatDate(date, getTime = false) {
-  const year = date.getFullYear();
-  const month = ('0' + (date.getMonth() + 1)).slice(-2);
-  const day = ('0' + date.getDate()).slice(-2);
+const today = new Date();
 
-  const hours = ('0' + date.getHours()).slice(-2);
-  const minutes = ('0' + date.getMinutes()).slice(-2);
-  const seconds = ('0' + date.getSeconds()).slice(-2);
+export const todayYear = today.getFullYear();
+export const todayMonth = ('0' + (today.getMonth() + 1)).slice(-2);
+export const todayDay = ('0' + today.getDate()).slice(-2);
 
-  const dateStr = year + '-' + month + '-' + day;
-  const timeString = hours + ':' + minutes + ':' + seconds;
+export const todayHours = ('0' + today.getHours()).slice(-2);
+export const todayMinutes = ('0' + today.getMinutes()).slice(-2);
+export const todaySeconds = ('0' + today.getSeconds()).slice(-2);
 
-  return getTime ? dateStr + ' ' + timeString : dateStr;
-}
+export const todayDateStr = todayYear + '-' + todayMonth + '-' + todayDay;
+export const todayTimeString = todayHours + ':' + todayMinutes + ':' + todaySeconds;
 
-export function formatDayOfWeek(date) {
+export const todayDateWithTime = todayDateStr + todayTimeString;
+
+export function formatDayOfWeek() {
   const weekDay = ['일', '월', '화', '수', '목', '금', '토'];
-  const dayOfWeek = weekDay[date.getDay()];
+  const dayOfWeek = weekDay[today.getDay()];
 
   return dayOfWeek;
 }

@@ -2,15 +2,18 @@ import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/
 import { createLogger } from 'redux-logger';
 import todoReducer from './reducers/todoReducer';
 import { getItem, setItem } from '../utils/localstorage';
+import diaryReducer from './reducers/diaryReducer';
 
 const logger = createLogger();
 
 const rootReducer = combineReducers({
   todos: todoReducer,
+  diarys: diaryReducer,
 });
 
 const initialState = {
   todos: getItem('todo_list', []),
+  diarys: getItem('diarys', []),
 };
 
 const store = configureStore({
@@ -22,6 +25,7 @@ const store = configureStore({
 
 store.subscribe(() => {
   setItem('todo_list', store.getState().todos);
+  setItem('diarys', store.getState().diarys);
 });
 
 export default store;
