@@ -11,7 +11,7 @@ export default function Todo({ date, todo }) {
     dispatch(toggleDoneTodo({ date, id }));
   };
   const onHandleClick = (e, date, id) => {
-    const { name } = e.target;
+    const { name } = e.target.closest('button');
     name === 'edit' && dispatch(toggleEditTodo({ date, id }));
     name === 'remove' && dispatch(removeTodo({ date, id }));
   };

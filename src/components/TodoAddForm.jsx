@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../store/reducers/todoReducer';
 import { todayDateStr } from '../utils/date';
 import { IoMdPaperPlane } from 'react-icons/io';
-import Input from './Input';
+import InputText from './InputText';
 
 export default function TodoInput() {
   const [value, setValue] = useState('');
@@ -18,7 +18,7 @@ export default function TodoInput() {
   return (
     <form action="#" style={{ width: '100%' }} onSubmit={onHandleSubmit}>
       <fieldset style={{ display: 'flex', padding: '15px 20px 13px', boxSizing: 'border-box' }}>
-        <Input value={value} setValue={setValue} />
+        <InputText value={value} setValue={setValue} />
         <button type="submit">
           <IoMdPaperPlane />
         </button>
