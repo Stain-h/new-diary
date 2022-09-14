@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../../store/reducers/todoReducer';
 import { todayDateStr } from '../../utils/date';
 import { IoMdPaperPlane } from 'react-icons/io';
-import InputText from './InputText';
+import InputText from '../common/InputText';
 import styles from './todo.module.css';
 
 export default function TodoInput() {

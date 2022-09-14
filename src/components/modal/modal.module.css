@@ -82,18 +82,7 @@
   margin-bottom: 4px;
   font-size: 30px;
 }
-
-.layer__form .textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-  resize: none;
-}
-.layer__form .textarea:focus {
+.layer__form input[type='textarea']:focus {
   border: 1px solid #9a9a9a;
 }
 .layer__form .submit {

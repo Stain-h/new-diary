@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './modal.module.css';
 
 export default function TextArea({ content, setContent }) {
   return (
@@ -11,7 +10,7 @@ export default function TextArea({ content, setContent }) {
         cols="30"
         rows="10"
         resize="none"
-        className={styles.textarea}
+        className={style.textarea}
         placeholder="일기를 입력하세요."
         value={content}
         onChange={(e) => setContent(e.target.value)}
@@ -19,3 +18,16 @@ export default function TextArea({ content, setContent }) {
     </div>
   );
 }
+
+const style = {
+  textarea: {
+    width: '100%',
+    padding: '12px',
+    fontSize: '14px',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    boxSizing: 'border-box',
+    outline: 'none',
+    resize: 'none',
+  },
+};

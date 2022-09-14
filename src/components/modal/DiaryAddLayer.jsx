@@ -4,7 +4,7 @@ import { todayDateWithTime } from '../../utils/date';
 import { addDiary } from '../../store/reducers/diaryReducer';
 import TagList from './TagList';
 import EmotionList from './EmotionList';
-import TextArea from './TextArea';
+import TextArea from '../common/TextArea';
 import styles from './modal.module.css';
 
 export default function NewDiaryLayer({ setShowPopup }) {
