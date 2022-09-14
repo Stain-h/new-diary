@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.module.css';
+import styles from './containers.module.css';
 import { formatDayOfWeek, todayDateStr } from '../utils/date';
 
 export default function DateContainer() {

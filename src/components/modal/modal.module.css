@@ -1,0 +1,148 @@
+/* NewDiaryPopup */
+.layer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+.layer__inner {
+  width: 320px;
+  height: 560px;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.layer__title {
+  display: block;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 2px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+}
+.layer__form {
+  padding: 20px 0;
+}
+.layer__form label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+.layer__form .item_tf input {
+  width: 100%;
+  height: 48px;
+  padding: 8px 16px;
+  font-size: 24px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+}
+.layer__form .emotions {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+.layer__form .emotionlist {
+  display: flex;
+}
+.layer__form .emotionlist li {
+  position: relative;
+  width: 20%;
+}
+.layer__form .emotionlist input[type='radio'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin-left: -1px;
+  opacity: 0.01;
+}
+.layer__form .emotionlist input[type='radio']:checked + label {
+  border: 2px solid #ffe251;
+  background-color: #fffdf1;
+}
+.layer__form .emotionlist label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 78px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.layer__form .emotionlist svg {
+  margin-bottom: 4px;
+  font-size: 30px;
+}
+
+.layer__form .textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+.layer__form .textarea:focus {
+  border: 1px solid #9a9a9a;
+}
+.layer__form .submit {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #ffd400;
+}
+.layer__form .taglist {
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  margin: 14px 0 20px;
+  padding: 0 10px;
+  width: 320px;
+  height: 34px;
+  box-sizing: border-box;
+}
+.layer__form .taglist::-webkit-scrollbar {
+  display: none;
+}
+.layer__form input[type='text'] {
+  width: 72px;
+  height: 30px;
+  margin-right: 6px;
+  padding: 0 4px;
+  font-size: 13px;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  outline: none;
+  box-sizing: border-box;
+}
+.layer__form .taglist span {
+  display: inline-block;
+  height: 30px;
+  padding: 0 12px;
+  line-height: 30px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  text-align: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.layer__form .taglist span + span,
+.layer__form .taglist span + input[type='text'] {
+  margin-left: 6px;
+}

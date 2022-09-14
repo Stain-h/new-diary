@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Todo from './Todo';
+import styles from './todo.module.css'
 
-export default function TodoList({ styles }) {
+export default function TodoList() {
   const todos = useSelector((state) => state.todos);
   return (
     <div className={styles.wrap}>

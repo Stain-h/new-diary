@@ -10,7 +10,7 @@ export default function Input({ value, setValue, readOnly }) {
   };
 
   return (
-    <div style={style.item_tf}>
+    <div style={style.item}>
       <input
         type="text"
         value={value}
@@ -26,8 +26,7 @@ export default function Input({ value, setValue, readOnly }) {
 }
 
 const style = {
-  /* TodoForm */
-  item_tf: {
+  item: {
     width: '100%',
     boxSizing: 'border-box',
   },
@@ -57,8 +56,5 @@ const style = {
     boxSizing: 'border-box',
     outline: 'none',
     caretColor: '#bbb',
-  },
-  inputPlaceholder: {
-    color: '#bbb',
   },
 };

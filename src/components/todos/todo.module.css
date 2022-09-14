@@ -1,0 +1,64 @@
+/* TodoList */
+.wrap {
+  width: 100%;
+  height: calc(100% - 50px);
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.box + .box {
+  margin-top: 40px;
+}
+.log {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+.list {
+  padding: 10px 30px 0;
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.item + .item {
+  margin-top: 5px;
+}
+.item input[type=checkbox] {
+  flex-basis: 19px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+.item input[type=checkbox]:checked + span {
+  color: #999;
+  text-decoration: line-through;
+}
+.item .text {
+  display: inline-block;
+  width: 190px;
+}
+.item button {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+}
+
+/* TodoAddForm */
+.form{
+  width: 100%;
+}
+.fieldset{
+  display: flex;
+  padding: 15px 20px 13px;
+  box-sizing: border-box;
+}
+.fieldset input::placeholder {
+  color: #bbb;
+}

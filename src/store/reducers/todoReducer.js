@@ -16,10 +16,6 @@ export const toggleEditTodo = createAction('TOGGLE_EDIT_TODO');
 const todoReducer = createReducer(initialState, {
   [addTodo]: (state, action) => {
     const { date, contents } = action.payload;
-    if (contents === '') {
-      alert('할일을 입력해주세요');
-      return;
-    }
     const newTodo = { id: nanoid(), contents, done: false };
     const existedDate = state.find((section) => section.date === date);
     if (existedDate) {

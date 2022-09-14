@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoList from '../components/TodoList';
-import TodoAddForm from '../components/TodoAddForm';
-import styles from './style.module.css';
+import TodoList from '../components/todos/TodoList';
+import TodoAddForm from '../components/todos/TodoAddForm';
+import styles from './containers.module.css';
 
 export default function TodoContainer() {
   return (

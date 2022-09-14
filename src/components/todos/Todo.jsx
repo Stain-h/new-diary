@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeTodo, toggleDoneTodo, toggleEditTodo } from '../store/reducers/todoReducer';
+import { removeTodo, toggleDoneTodo, toggleEditTodo } from '../../store/reducers/todoReducer';
 import { BiEdit } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
+import styles from './todo.module.css';
 
 export default function Todo({ date, todo }) {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export default function Todo({ date, todo }) {
   };
 
   return (
-    <li>
+    <li className={styles.item}>
       <span className="wrap_todo">
         <input type="checkbox" onChange={() => toggleCheckBox(date, todo.id)} checked={todo.done ? 'checked' : ''} />
         <span className="text">{todo.contents}</span>

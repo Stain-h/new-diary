@@ -1,7 +1,8 @@
 import React from 'react';
-import { todayMonth } from '../utils/date';
+import { todayMonth } from '../../utils/date';
+import styles from './diarys.module.css';
 
-export default function Diary({ styles, section, setShowPopup }) {
+export default function Diary({ section, setShowPopup }) {
   const { category, diaryList } = section;
   const month = category.slice(5, 7);
   return (
@@ -17,7 +18,7 @@ export default function Diary({ styles, section, setShowPopup }) {
           ))}
         {month === todayMonth && (
           <li className={styles.diary}>
-            <button className={styles.new_diary} onClick={() => setShowPopup(true)}>
+            <button className={styles.btn_add} onClick={() => setShowPopup(true)}>
               +
             </button>
           </li>

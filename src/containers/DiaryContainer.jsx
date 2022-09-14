@@ -1,7 +1,7 @@
 import React from 'react';
-import DiaryList from '../components/DiaryList';
-import DiaryPreView from '../components/DiaryPreView';
-import styles from './style.module.css';
+import DiaryList from '../components/diarys/DiaryList';
+import DiaryPreView from '../components/diarys/DiaryPreView';
+import styles from './containers.module.css';
 
 export default function DiaryContainer() {
   return (
