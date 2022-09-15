@@ -4,55 +4,58 @@
 }
 .section__title {
   color: #444;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .box {
+  width: 100%;
   margin-top: 20px;
 }
+.month {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 11px;
+  color: #999;
+}
 .list {
-  display: flex;
+  overflow: hidden;
+  width: 817px;
 }
 .diary {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 150px;
   height: 150px;
+  margin: 5px;
   border-radius: 12px;
   border: 1px solid #eaeaea;
   background-color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
 }
-.diary + .diary {
-  margin-left: 20px;
-}
-.diary:last-of-type {
-  border: none;
-}
-.btn_add {
-  display: flex;
+.diary_add {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
-  font-size: 24px;
+  width: 152px;
+  height: 152px;
+  margin: 5px;
+  font-size: 22px;
   color: #aaa;
   border: 1px dashed #ddd;
   border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
 }
-.btn_add:hover {
+.diary_add:hover {
   color: #666;
   border-radius: 12px;
   border: 1px dashed #999;
 }
-.month {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  color: #999;
-}
 .date {
-  font-size: 24px;
+  font-size: 22px;
   color: #333;
 }
 

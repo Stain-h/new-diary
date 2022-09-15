@@ -10,7 +10,7 @@ export default function TextArea({ content, setContent }) {
         cols="30"
         rows="10"
         resize="none"
-        className={style.textarea}
+        style={style.textarea}
         placeholder="일기를 입력하세요."
         value={content}
         onChange={(e) => setContent(e.target.value)}
