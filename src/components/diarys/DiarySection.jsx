@@ -12,7 +12,7 @@ export default function DiaryBox() {
   return (
     <div className={styles.section}>
       <h2 className={styles.section__title}>Diary</h2>
-      {diarys.length > 0 &&
+      {diarys.length > 0 ? (
         diarys.map((section) => {
           const { category } = section;
           return (
@@ -21,7 +21,15 @@ export default function DiaryBox() {
               <DiaryList section={section} setShowPopup={setShowPopup} />
             </div>
           );
-        })}
+        })
+      ) : (
+        <div className={styles.box}>
+          <em className={styles.month}>{todayMonth.slice(-1)}월</em>
+          <div className={styles.diary_add} onClick={() => setShowPopup(true)}>
+            +
+          </div>
+        </div>
+      )}
       {showPopup && <DiaryAddLayer styles={styles} setShowPopup={setShowPopup} />}
     </div>
   );
