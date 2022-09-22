@@ -40,6 +40,7 @@ const todoReducer = createReducer(initialState, {
     const { date, id } = action.payload;
     const selectedSection = state.find((existDateSection) => existDateSection.date === date);
     const selectedTodo = selectedSection.todoList.find((todo) => todo.id === id);
+    console.log(selectedTodo);
     // selectedTodo.isEditing = !selectedTodo.isEditing;
   },
 });

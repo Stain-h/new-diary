@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MainPage from './pages/MainPage';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
-import { app, db } from './fbase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from './fbase';
 
 export default function App() {
   // FireStore Set
