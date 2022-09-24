@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import DiaryList from './DiaryList';
 import DiaryAddLayer from '../modal/DiaryAddLayer';
 import { todayMonth } from '../../utils/date';
 import styles from './diarys.module.css';
 
-export default function DiaryBox() {
+export default function DiaryBox({ diarys, setDiaryDetail }) {
   const [showPopup, setShowPopup] = useState(false);
-  const diarys = useSelector((state) => state.diarys);
 
   return (
     <div className={styles.section}>
@@ -18,7 +16,7 @@ export default function DiaryBox() {
           return (
             <div key={section.id} className={styles.box}>
               <em className={styles.month}>{category !== '' ? category.slice(-1) : todayMonth.slice(-1)}월</em>
-              <DiaryList section={section} setShowPopup={setShowPopup} />
+              <DiaryList section={section} setShowPopup={setShowPopup} setDiaryDetail={setDiaryDetail} />
             </div>
           );
         })

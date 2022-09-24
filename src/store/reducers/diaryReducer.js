@@ -3,7 +3,6 @@ import { todayDateStr } from '../../utils/date';
 
 const initialState = [
   {
-    id: nanoid(),
     category: todayDateStr.slice(0, 7),
     diaryList: [
       {
@@ -18,12 +17,12 @@ const initialState = [
 ];
 
 export const addDiary = createAction('ADD_DIARY');
+export const viewDiaryDetail = createAction('VIEW_DIARY_DETAIL');
 
 const diaryReducer = createReducer(initialState, {
   [addDiary]: (state, action) => {
     const { emotion, content, tagList, createDate } = action.payload;
     const yearAndMonth = createDate.slice(0, 7);
-    // const yearAndMonth = '2022-08'; // month-test
     const existCate = state.find((section) => section.category === yearAndMonth);
     const newDiary = { id: nanoid(), emotion, content, tagList, createDate };
     if (existCate) {
